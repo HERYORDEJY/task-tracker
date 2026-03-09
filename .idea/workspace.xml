@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725818cc-9b79-4474-8452-0dafc12a31dd" name="Changes" comment="`feat(dependencies): add async-storage and reorder worklets`&#10;---&#10;* Added &quot;@react-native-async-storage/async-storage&quot; version 2.2.0 to dependencies.&#10;* Reordered &quot;react-native-worklets&quot; in dependencies for consistency.">
-      <change afterPath="$PROJECT_DIR$/.prettierrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/storage.ts" afterDir="false" />
+    <list default="true" id="725818cc-9b79-4474-8452-0dafc12a31dd" name="Changes" comment="`feat(storage): implement task storage functions`&#10;---&#10;- Add AsyncStorage integration for task management&#10;- Create functions to load and save tasks from offline storage&#10;- Define TaskItemDataType and TaskFilterKeyType interfaces">
+      <change afterPath="$PROJECT_DIR$/src/components/NewTaskInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TasksFilterBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TasksList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TasksListEmpty.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TasksListItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useTaskMethods.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -54,7 +57,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/Users/heryordejy/Dev/ReactNative/Interviews/StaceLabs/task-tracker",
+    "last_opened_file_path": "/Users/heryordejy/Dev/ReactNative/Interviews/StaceLabs/task-tracker/src/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,6 +72,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -105,7 +109,7 @@
       <updated>1746609545198</updated>
       <workItem from="1746609551484" duration="786000" />
       <workItem from="1773055743135" duration="502000" />
-      <workItem from="1773056259841" duration="2041000" />
+      <workItem from="1773056259841" duration="5242000" />
     </task>
     <task id="LOCAL-00001" summary="`feat(layout): restructure layout components`&#10;---&#10;- Replace TabLayout with RootLayout using Expo Router's Stack.&#10;- Simplify HomeScreen to display a basic edit instruction.&#10;- Update package.json to include @react-native-async-storage/async-storage.&#10;- Add .gitignore and project configuration files.">
       <option name="closed" value="true" />
@@ -131,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773056475293</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="`feat(storage): implement task storage functions`&#10;---&#10;- Add AsyncStorage integration for task management&#10;- Create functions to load and save tasks from offline storage&#10;- Define TaskItemDataType and TaskFilterKeyType interfaces">
+      <option name="closed" value="true" />
+      <created>1773058363126</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773058363126</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +164,8 @@
     <MESSAGE value="`feat(layout): restructure layout components`&#10;---&#10;- Replace TabLayout with RootLayout using Expo Router's Stack.&#10;- Simplify HomeScreen to display a basic edit instruction.&#10;- Update package.json to include @react-native-async-storage/async-storage.&#10;- Add .gitignore and project configuration files." />
     <MESSAGE value="`project reset`" />
     <MESSAGE value="`feat(dependencies): add async-storage and reorder worklets`&#10;---&#10;* Added &quot;@react-native-async-storage/async-storage&quot; version 2.2.0 to dependencies.&#10;* Reordered &quot;react-native-worklets&quot; in dependencies for consistency." />
-    <option name="LAST_COMMIT_MESSAGE" value="`feat(dependencies): add async-storage and reorder worklets`&#10;---&#10;* Added &quot;@react-native-async-storage/async-storage&quot; version 2.2.0 to dependencies.&#10;* Reordered &quot;react-native-worklets&quot; in dependencies for consistency." />
+    <MESSAGE value="`feat(storage): implement task storage functions`&#10;---&#10;- Add AsyncStorage integration for task management&#10;- Create functions to load and save tasks from offline storage&#10;- Define TaskItemDataType and TaskFilterKeyType interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="`feat(storage): implement task storage functions`&#10;---&#10;- Add AsyncStorage integration for task management&#10;- Create functions to load and save tasks from offline storage&#10;- Define TaskItemDataType and TaskFilterKeyType interfaces" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
