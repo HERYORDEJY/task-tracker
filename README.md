@@ -1,56 +1,101 @@
-# Welcome to your Expo app 👋
+# Task Tracker
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple mobile task management app built with React Native, Expo, and TypeScript.
 
-## Get started
+---
 
-1. Install dependencies
+## Setup Instructions
 
-   ```bash
-   npm install
-   ```
+**Prerequisites**
 
-2. Start the app
+- Node.js 18 or higher
+- [Expo Go](https://expo.dev/go) installed on your phone, or an iOS/Android simulator running locally
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+**Steps**
 
 ```bash
-npm run reset-project
+# 1. Clone the repository
+git clone https://github.com/your-username/task-tracker.git
+cd task-tracker
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Once the server starts, scan the QR code with **Expo Go** (Android) or the **Camera app** (iOS) to open the app on your device. Press `i` to open in an iOS simulator or `a` for Android.
 
-### Other setup steps
+---
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Features
 
-## Learn more
+- View a list of tasks
+- Add new tasks with validation (empty tasks are blocked)
+- Mark tasks as complete or incomplete
+- Filter tasks by **All**, **Active**, or **Completed**
+- Pull-to-refresh to reload tasks from local storage
+- Tasks persist across app restarts via AsyncStorage
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Libraries Used
 
-## Join the community
+| Library | Version | Why |
+|---|---|---|
+| `expo` | SDK 55 | Managed workflow — handles native build config, removes the need for Xcode/Android Studio for development |
+| `expo-router` | v3 | File-based routing included with SDK 55. Keeps navigation idiomatic and makes adding new screens trivial |
+| `@react-native-async-storage/async-storage` | latest | The officially recommended key-value storage solution for Expo apps. Simple API, well-maintained, no native linking required with Expo |
+| `typescript` | — | Catches type errors at compile time, makes component contracts explicit via typed props, reduces runtime bugs |
 
-Join our community of developers creating universal apps.
+No third-party UI libraries were used. All components are built with React Native's core primitives (`View`, `Text`, `FlatList`, `TouchableOpacity`) to keep the dependency footprint minimal and demonstrate layout fundamentals.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## Project Structure
+
+```
+TaskTracker/
+├── app/
+│   └── index.tsx           # Root screen — wires all components together
+├── src/
+│   ├── components/
+│   │   ├── CustomButton.tsx       # For custom button UI implementation
+│   │   ├── NewTaskInput.tsx       # Custom input implementation
+│   │   ├── TasksListItem.tsx      # Single task row with toggle
+│   │   ├── TasksList.tsx          # FlatList with pull-to-refresh and empty state
+│   │   ├── TasksFilterBar.tsx     # All / Active / Completed filter tabs
+│   │   └── TasksListEmpty.tsx     # Contextual empty list feedback
+│   ├── hooks/
+│   │   └── useTaskMethods.ts      # All task logic + AsyncStorage sync
+│   ├── utils/
+│   │   └── storage.ts             # loadTasksFromOfflineStorage / saveTasksToOfflineStorage / clearTasksFromOfflineStorage
+│   ├── types/
+│   │   └── index.ts               # TaskItemDataType interface + TaskFilterKeyType type
+├── app.json
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+## What I Would Improve With More Time
+
+**Swipe to delete**
+Implement a swipe-left gesture on each `TasksListItem` to reveal a delete action, using `react-native-gesture-handler` + `react-native-reanimated`. This is the most natural mobile pattern for removing list items.
+
+**Task editing**
+Allow users to tap a task title to rename it inline. Currently tasks are immutable once created.
+
+**Due dates**
+Add an optional due date field per task using `@react-native-community/datetimepicker`, with overdue tasks visually highlighted in the list.
+
+**Unit tests**
+Add tests with Jest and `@testing-library/react-native` covering the `useTaskMethods` hook (add, toggle, filter logic) and storage utilities. The current architecture was structured with testability in mind — the hook and storage layer are fully decoupled from the UI.
+
+**Reorder tasks**
+Drag-to-reorder using `react-native-draggable-flatlist` so users can manually prioritise their list.
+
+**Haptic feedback**
+A subtle haptic on task completion using `expo-haptics` — a small detail that makes the toggle feel satisfying on a real device.

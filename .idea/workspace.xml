@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725818cc-9b79-4474-8452-0dafc12a31dd" name="Changes" comment="`feat(ui): add custom button and input components`&#10;---&#10;- Introduced CustomButton for reusable button UI.&#10;- Added NewTaskInput with error handling and focus styles.&#10;- Created TasksFilterBar for filtering tasks.&#10;- Implemented TasksList and TasksListItem for displaying tasks.&#10;- Added TasksListEmpty for empty state representation.">
-      <change beforePath="$PROJECT_DIR$/src/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.tsx" afterDir="false" />
+    <list default="true" id="725818cc-9b79-4474-8452-0dafc12a31dd" name="Changes" comment="`cleanups`">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +30,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "HERYORDEJY"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:HERYORDEJY/task-tracker.git",
+    "accountId": "b09f08bb-3fb2-4c09-bc2f-5085bbe31f33"
+  }
+}]]></component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -102,7 +117,7 @@
       <updated>1746609545198</updated>
       <workItem from="1746609551484" duration="786000" />
       <workItem from="1773055743135" duration="502000" />
-      <workItem from="1773056259841" duration="8008000" />
+      <workItem from="1773056259841" duration="8910000" />
     </task>
     <task id="LOCAL-00001" summary="`feat(layout): restructure layout components`&#10;---&#10;- Replace TabLayout with RootLayout using Expo Router's Stack.&#10;- Simplify HomeScreen to display a basic edit instruction.&#10;- Update package.json to include @react-native-async-storage/async-storage.&#10;- Add .gitignore and project configuration files.">
       <option name="closed" value="true" />
@@ -160,7 +175,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773064150231</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="`feat(ui): restructure layout and enhance task management`&#10;---&#10;- Update RootLayout to hide header in Stack navigation.&#10;- Implement NewTaskInput with error handling and focus styles.&#10;- Add CustomButton for task addition.&#10;- Create TasksFilterBar for filtering tasks.&#10;- Implement TasksList for displaying tasks with filtering capabilities.">
+      <option name="closed" value="true" />
+      <created>1773064375786</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773064375786</updated>
+    </task>
+    <task id="LOCAL-00009" summary="`cleanups`">
+      <option name="closed" value="true" />
+      <created>1773064465046</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773064465046</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +216,9 @@
     <MESSAGE value="feat(tasks): add custom hook for task management&#10;&#10;- Implement useTaskMethods hook to manage tasks&#10;- Load and save tasks from offline storage&#10;- Provide filtering, adding, and toggling functionalities" />
     <MESSAGE value="`feat(storage): enhance task storage management`&#10;&#10;* Refactor loadTasksFromOfflineStorage to handle corrupt data gracefully&#10;* Simplify saveTasksToOfflineStorage by removing unnecessary checks&#10;* Add clearTasksFromOfflineStorage function for clearing tasks&#10;* Introduce generateQuickGuid for unique task IDs" />
     <MESSAGE value="`feat(ui): add custom button and input components`&#10;---&#10;- Introduced CustomButton for reusable button UI.&#10;- Added NewTaskInput with error handling and focus styles.&#10;- Created TasksFilterBar for filtering tasks.&#10;- Implemented TasksList and TasksListItem for displaying tasks.&#10;- Added TasksListEmpty for empty state representation." />
-    <option name="LAST_COMMIT_MESSAGE" value="`feat(ui): add custom button and input components`&#10;---&#10;- Introduced CustomButton for reusable button UI.&#10;- Added NewTaskInput with error handling and focus styles.&#10;- Created TasksFilterBar for filtering tasks.&#10;- Implemented TasksList and TasksListItem for displaying tasks.&#10;- Added TasksListEmpty for empty state representation." />
+    <MESSAGE value="`feat(ui): restructure layout and enhance task management`&#10;---&#10;- Update RootLayout to hide header in Stack navigation.&#10;- Implement NewTaskInput with error handling and focus styles.&#10;- Add CustomButton for task addition.&#10;- Create TasksFilterBar for filtering tasks.&#10;- Implement TasksList for displaying tasks with filtering capabilities." />
+    <MESSAGE value="`cleanups`" />
+    <option name="LAST_COMMIT_MESSAGE" value="`cleanups`" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
