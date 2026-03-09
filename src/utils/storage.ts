@@ -7,38 +7,31 @@ export async function loadTasksFromOfflineStorage(): Promise<
     Array<TaskItemDataType>
 > {
     try {
-        const data = await AsyncStorage.getItem(STORAGE_KEY)
+        const raw = await AsyncStorage.getItem(STORAGE_KEY)
+        if (!raw) return []
 
-        if (data) {
-            return JSON.parse(data) as Array<TaskItemDataType>
-        }
+        const parsed = JSON.parse(raw)
 
+        // Guard against corrupt / unexpected data shape
+        if (!Array.isArray(parsed)) return []
+
+        return parsed as Array<TaskItemDataType>
+    } catch {
+        // Parsing or storage error — fail silently, start fresh
         return []
-    } catch (error) {
-        throw error
     }
 }
 
 export async function saveTasksToOfflineStorage(
-    tasks: TaskItemDataType | Array<TaskItemDataType>
+    tasks: Array<TaskItemDataType>
 ): Promise<void> {
     try {
-        const existingData = await AsyncStorage.getItem(STORAGE_KEY)
-        const parsedExistingData = Boolean(existingData)
-            ? JSON.parse(existingData as string)
-            : []
+        await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
+    } catch {}
+}
 
-        if (Array.isArray(tasks)) {
-            const newData = [...parsedExistingData, ...tasks]
-            return await AsyncStorage.setItem(
-                STORAGE_KEY,
-                JSON.stringify(newData)
-            )
-        }
-
-        const newData = [...parsedExistingData, tasks]
-        return await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(newData))
-    } catch (error) {
-        throw error
-    }
+export async function clearTasksFromOfflineStorage(): Promise<void> {
+    try {
+        await AsyncStorage.removeItem(STORAGE_KEY)
+    } catch {}
 }

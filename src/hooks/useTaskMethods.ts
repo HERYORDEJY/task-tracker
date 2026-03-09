@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
 import { TaskFilterKeyType, TaskItemDataType } from '@/types'
 import {
+    clearTasksFromOfflineStorage,
     loadTasksFromOfflineStorage,
     saveTasksToOfflineStorage
 } from '@/utils/storage'
+import { generateQuickGuid } from '@/utils/uuid'
 
 interface UseTaskMethodsReturn {
     filteredTasks: Array<TaskItemDataType>
@@ -13,6 +15,7 @@ interface UseTaskMethodsReturn {
     addTask: (title: string) => void
     toggleTask: (id: string) => void
     refreshTasks: () => Promise<void>
+    clearTasks: () => Promise<void>
 }
 
 export function useTaskMethods(): UseTaskMethodsReturn {
@@ -41,7 +44,7 @@ export function useTaskMethods(): UseTaskMethodsReturn {
         if (!trimmed) return
 
         const newTask: TaskItemDataType = {
-            id: Date.now().toString(),
+            id: generateQuickGuid(),
             title: trimmed,
             completed: false,
             createdAt: Date.now()
@@ -76,6 +79,7 @@ export function useTaskMethods(): UseTaskMethodsReturn {
         setFilter,
         addTask,
         toggleTask,
-        refreshTasks
+        refreshTasks,
+        clearTasks: clearTasksFromOfflineStorage
     }
 }
